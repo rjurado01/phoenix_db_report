@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>App · Phoenix Framework</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
   </head>
   <body>
     <header>
@@ -30,13 +31,14 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                     <a class="dropdown-item" href="#">
-                      <i class="dropdown-icon fe fe-user"></i> Profile
+                      <i class="dropdown-icon" data-feather="user"></i>
+                      <span>Profile<span>
                     </a>
 
                     <div class="dropdown-divider"></div>
 
                     <%= link to: Routes.session_path(@conn, :delete), method: :delete, class: "dropdown-item" do %>
-                      <i class="dropdown-icon fe fe-log-out"></i> Sign out
+                      <i class="dropdown-icon" data-feather="log-out"></i> Sign out
                     <% end %>
                   </div>
                 </div>

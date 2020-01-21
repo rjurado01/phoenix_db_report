@@ -7,6 +7,8 @@ import "../node_modules/bootstrap/js/dist/util";
 import "../node_modules/bootstrap/js/dist/button";
 import "../node_modules/bootstrap/js/dist/dropdown";
 
+import feather from 'feather-icons';
+
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured
 // in "webpack.config.js".
@@ -19,3 +21,7 @@ import "phoenix_html"
 //
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
+
+$( document ).ready(function() {
+  feather.replace();
+});
