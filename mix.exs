@@ -44,7 +44,9 @@ defmodule App.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:comeonin, "~> 5.2"},
-      {:bcrypt_elixir, "~> 2.0.3"}
+      {:bcrypt_elixir, "~> 2.0.3"},
+      {:ex_machina, "~> 2.3", only: :test},
+      {:shorter_maps, "~> 2.1"}
     ]
   end
 

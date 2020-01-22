@@ -26,12 +26,7 @@ module.exports = (env, options) => ({
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [
-              ['@babel/plugin-proposal-decorators', {decoratorsBeforeExport: true}]
-            ]
-          }
+          loader: 'babel-loader'
         }
       },
       {

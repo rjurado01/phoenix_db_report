@@ -31,6 +31,8 @@ defmodule App.Session do
     end
   end
 
+  defp find_user(changeset), do: changeset
+
   defp authenticate(
     %Changeset{valid?: true, changes: %{password: password, hash: hash}} = changeset
   ) do
@@ -41,6 +43,5 @@ defmodule App.Session do
     end
   end
 
-  defp find_user(changeset), do: changeset
   defp authenticate(changeset), do: changeset
 end

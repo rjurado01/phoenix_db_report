@@ -31,16 +31,18 @@ defmodule App.User do
     validate_required(changeset, [:password])
   end
 
+  defp validate_required_password(changeset), do: changeset
+
   defp encrypt_password(%Changeset{valid?: true, changes: %{password: password}} = changeset) do
     change(changeset, password_hash: Bcrypt.hash_pwd_salt(password, log_rounds: 8))
   end
+
+  defp encrypt_password(changeset), do: changeset
 
   defp downcase_email(%Changeset{valid?: true, changes: %{email: email}} = changeset)
        when not is_nil(email) do
     update_change(changeset, :email, &String.downcase/1)
   end
 
-  defp validate_required_password(changeset), do: changeset
-  defp encrypt_password(changeset), do: changeset
   defp downcase_email(changeset), do: changeset
 end

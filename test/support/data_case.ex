@@ -24,6 +24,8 @@ defmodule App.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import App.DataCase
+
+      use App.GlobalTestHelpers
     end
   end
 
