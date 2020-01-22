@@ -1,5 +1,5 @@
-defmodule AppWeb.Router do
-  use AppWeb, :router
+defmodule Web.Router do
+  use Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,22 +13,22 @@ defmodule AppWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", AppWeb do
-    pipe_through [:browser, AppWeb.Plugs.Guest]
+  scope "/", Web do
+    pipe_through [:browser, Web.Plugs.Guest]
 
     get "/login", SessionController, :new
     post "/login", SessionController, :create
   end
 
-  scope "/", AppWeb do
-    pipe_through [:browser, AppWeb.Plugs.Auth]
+  scope "/", Web do
+    pipe_through [:browser, Web.Plugs.Auth]
 
     get "/", HomeController, :index
     delete "/logout", SessionController, :delete
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", AppWeb do
+  # scope "/api", Web do
   #   pipe_through :api
   # end
 end

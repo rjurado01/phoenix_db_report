@@ -11,10 +11,10 @@ config :app,
   ecto_repos: [App.Repo]
 
 # Configures the endpoint
-config :app, AppWeb.Endpoint,
+config :app, Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "qVczsU5vkJjFCqH584+jNTHvfL+CAhAj5zaX0gcWafTTN+xexzTymEQ5VuC4oDdi",
-  render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: Web.ErrorView, accepts: ~w(html json)],
   pubsub: [name: App.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger

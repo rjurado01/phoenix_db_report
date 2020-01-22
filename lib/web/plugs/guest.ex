@@ -1,4 +1,4 @@
-defmodule AppWeb.Plugs.Guest do
+defmodule Web.Plugs.Guest do
   import Plug.Conn
   import Phoenix.Controller
 
@@ -7,7 +7,7 @@ defmodule AppWeb.Plugs.Guest do
   def call(conn, _opts) do
     if Plug.Conn.get_session(conn, :current_user_id) do
       conn
-      |> redirect(to: AppWeb.Router.Helpers.home_path(conn, :index))
+      |> redirect(to: Web.Router.Helpers.home_path(conn, :index))
       |> halt()
     end
 

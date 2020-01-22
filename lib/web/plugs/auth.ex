@@ -1,4 +1,4 @@
-defmodule AppWeb.Plugs.Auth do
+defmodule Web.Plugs.Auth do
   import Plug.Conn
   import Phoenix.Controller
 

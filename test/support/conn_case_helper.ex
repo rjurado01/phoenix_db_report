@@ -1,4 +1,4 @@
-defmodule AppWeb.ConnCaseHelper do
+defmodule Web.ConnCaseHelper do
   def sign_in(%{conn: conn}) do
     user = App.Factory.insert(:user)
 

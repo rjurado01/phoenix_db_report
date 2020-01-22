@@ -1,5 +1,5 @@
-defmodule AppWeb.HomeControllerTest do
-  use AppWeb.ConnCase
+defmodule Web.HomeControllerTest do
+  use Web.ConnCase
 
   describe "GET / when user is logged" do
     setup [:sign_in]

@@ -1,5 +1,5 @@
-defmodule AppWeb.SessionController do
-  use AppWeb, :controller
+defmodule Web.SessionController do
+  use Web, :controller
 
   alias App.Session
 

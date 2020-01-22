@@ -1,5 +1,5 @@
-defmodule AppWeb.SessionControllerTest do
-  use AppWeb.ConnCase
+defmodule Web.SessionControllerTest do
+  use Web.ConnCase
 
   test "GET /login", %{conn: conn} do
     conn = get(conn, "/login")

@@ -1,7 +1,7 @@
-defmodule AppWeb.Endpoint do
+defmodule Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :app
 
-  socket "/socket", AppWeb.UserSocket,
+  socket "/socket", Web.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -42,5 +42,5 @@ defmodule AppWeb.Endpoint do
     key: "_app_key",
     signing_salt: "IPtoGVIG"
 
-  plug AppWeb.Router
+  plug Web.Router
 end
