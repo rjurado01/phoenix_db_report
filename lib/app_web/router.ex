@@ -23,7 +23,7 @@ defmodule AppWeb.Router do
   scope "/", AppWeb do
     pipe_through [:browser, AppWeb.Plugs.Auth]
 
-    get "/", PageController, :index
+    get "/", HomeController, :index
     delete "/logout", SessionController, :delete
   end
 

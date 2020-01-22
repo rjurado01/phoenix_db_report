@@ -7,7 +7,7 @@ defmodule AppWeb.Plugs.Guest do
   def call(conn, _opts) do
     if Plug.Conn.get_session(conn, :current_user_id) do
       conn
-      |> redirect(to: AppWeb.Router.Helpers.page_path(conn, :index))
+      |> redirect(to: AppWeb.Router.Helpers.home_path(conn, :index))
       |> halt()
     end
 

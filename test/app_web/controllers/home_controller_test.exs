@@ -1,4 +1,4 @@
-defmodule AppWeb.PageControllerTest do
+defmodule AppWeb.HomeControllerTest do
   use AppWeb.ConnCase
 
   describe "GET / when user is logged" do

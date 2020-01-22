@@ -17,7 +17,7 @@ defmodule AppWeb.SessionController do
       conn
       |> put_session(:current_user_id, changeset.changes.user_id)
       |> put_flash(:info, "Signed in successfully.")
-      |> redirect(to: Routes.page_path(conn, :index))
+      |> redirect(to: Routes.home_path(conn, :index))
     else
       # needed by form_for to show errors
       {_, changeset} = Ecto.Changeset.apply_action(changeset, :insert)
