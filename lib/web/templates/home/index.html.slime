@@ -1,0 +1,58 @@
+.page-header
+  h1.page-title Home
+
+.card
+  .table-responsive
+    table.table.card-table.table-striped.table-vcenter
+      thead
+        tr
+          th colspan="2"  User
+          th Commit
+          th Date
+          th
+      tbody
+        tr
+          td
+            span.avatar AA
+          td Ronald Bradley
+          td Initial commit
+          td.text-nowrap May 6, 2018
+          td.w-1
+            a.icon href="#"
+              i.fe.fe-trash
+        tr
+          td
+            span.avatar BM
+          td Russell Gibson
+          td Main structure
+          td.text-nowrap April 22, 2018
+          td
+            a.icon href="#"
+              i.fe.fe-trash
+        tr
+          td
+            span.avatar style=("background-image: url(images/avatar2.png)")
+          td Beverly Armstrong
+          td Left sidebar adjustments
+          td.text-nowrap April 15, 2018
+          td
+            a.icon href="#"
+              i.fe.fe-trash
+        tr
+          td
+            span.avatar style=("background-image: url(images/avatar3.png)")
+          td Bobby Knight
+          td Topbar dropdown style
+          td.text-nowrap April 8, 2018
+          td
+            a.icon href="#"
+              i.fe.fe-trash
+        tr
+          td
+            span.avatar style=("background-image: url(images/avatar4.png)")
+          td Sharon Wells
+          td Fixes #625
+          td.text-nowrap April 9, 2018
+          td
+            a.icon href="#"
+              i.fe.fe-trash

@@ -46,7 +46,8 @@ defmodule App.MixProject do
       {:comeonin, "~> 5.2"},
       {:bcrypt_elixir, "~> 2.0.3"},
       {:ex_machina, "~> 2.3", only: :test},
-      {:shorter_maps, "~> 2.1"}
+      {:shorter_maps, "~> 2.1"},
+      {:phoenix_slime, "~> 0.12.0"}
     ]
   end
 
