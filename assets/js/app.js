@@ -6,6 +6,7 @@ import "../node_modules/bootstrap/js/dist/index";
 import "../node_modules/bootstrap/js/dist/util";
 import "../node_modules/bootstrap/js/dist/button";
 import "../node_modules/bootstrap/js/dist/dropdown";
+import "../node_modules/bootstrap/js/dist/alert";
 
 import feather from 'feather-icons';
 
