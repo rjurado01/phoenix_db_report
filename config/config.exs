@@ -30,6 +30,9 @@ config :phoenix, :template_engines,
     slime: PhoenixSlime.Engine,
     slimleex: PhoenixSlime.LiveViewEngine # If you want to use LiveView
 
+config :app, App.EncryptionAES,
+  key: "1ELk0AvnTeqFdqR9s00zT58nizPVK0A2t2iUKn0iYvI="
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
