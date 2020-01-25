@@ -5,7 +5,7 @@
 
     = form_for @changeset, Routes.session_path(@conn, :create), [class: :card], fn f ->
       .card-body.p-6
-        .card-title Login to your account 2
+        .card-title Login to your account
 
         = if f.errors != [] do
           .alert.alert-danger role="alert"

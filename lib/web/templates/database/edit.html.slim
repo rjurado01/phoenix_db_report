@@ -1,0 +1,8 @@
+.page-header.d-flex
+  h1.page-title Edit database
+
+.row
+  .col-md-12
+    = render Web.DatabaseView, "_form.html",
+      path: Routes.database_path(@conn, :update, @changeset.data.id),
+      changeset: @changeset

@@ -13,6 +13,10 @@ defmodule Web.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :admin_layout do
+    plug :put_layout, {Web.LayoutView, :admin}
+  end
+
   scope "/", Web do
     pipe_through [:browser, Web.Plugs.Guest]
 
@@ -24,7 +28,14 @@ defmodule Web.Router do
     pipe_through [:browser, Web.Plugs.Auth]
 
     get "/", HomeController, :index
+
     delete "/logout", SessionController, :delete
+  end
+
+  scope "/admin", Web do
+    pipe_through [:browser, :admin_layout, Web.Plugs.Auth]
+
+    resources "/databases", DatabaseController
   end
 
   # Other scopes may use custom stacks.

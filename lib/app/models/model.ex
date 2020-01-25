@@ -42,6 +42,10 @@ defmodule App.Model do
         end
       end
 
+      def get!(id) do
+        __MODULE__ |> Repo.get!(id)
+      end
+
       def create(attrs \\ %{}) do
         struct(__MODULE__)
         |> __MODULE__.changeset(attrs)

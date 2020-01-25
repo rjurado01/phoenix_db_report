@@ -1,0 +1,24 @@
+.page-header.d-flex
+  h1.page-title Databases
+
+  button.ml-auto.btn.btn-primary Add Database
+
+.card
+  .table-responsive
+    table.table.card-table.table-striped.table-vcenter
+      thead
+        tr
+          th Title
+          th Type
+          th Updated at
+          th
+      tbody
+        = if @databases != [] do
+          = for db <- @databases do
+            tr
+              td = db.title
+              td = db.type
+              td = db.updated_at
+              td.w-1
+                = link to: Routes.database_path(@conn, :edit, db.id), method: :get, class: "icon" do
+                  i.dropdown-icon data-feather="edit"
