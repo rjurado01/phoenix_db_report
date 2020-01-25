@@ -7,6 +7,8 @@ import "../node_modules/bootstrap/js/dist/util";
 import "../node_modules/bootstrap/js/dist/button";
 import "../node_modules/bootstrap/js/dist/dropdown";
 import "../node_modules/bootstrap/js/dist/alert";
+import "../node_modules/bootstrap/js/dist/modal";
+import "../node_modules/bootstrap/js/dist/toast";
 
 import feather from 'feather-icons';
 
@@ -23,6 +25,16 @@ import "phoenix_html"
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
 
-$( document ).ready(function() {
+$(document).ready(function() {
+  // show icons
   feather.replace();
+
+  // remove notification after 2 seconds
+  $('#info-notification').delay(2000).fadeOut('fast', function() {
+    $(this).remove();
+  });
+
+  $('.confirmation').on('click', function () {
+    return confirm('Are you sure?');
+  });
 });

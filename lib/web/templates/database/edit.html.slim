@@ -1,0 +1,21 @@
+nav aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item
+      = link "Databases", to: Routes.database_path(@conn, :index)
+    li.breadcrumb-item.active aria-current="page"
+      = @changeset.data.title
+
+.row
+  .col-md-12
+    = render Web.DatabaseView, "_form.html",
+      path: Routes.database_path(@conn, :update, @changeset.data.id),
+      changeset: @changeset
+
+.row
+  .col
+    = link "Delete",
+      to: Routes.database_path(@conn, :delete, @changeset.data.id),
+      method: "delete",
+      class: 'btn btn-icon btn-danger confirmation'
+
+

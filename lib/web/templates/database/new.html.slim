@@ -1,0 +1,12 @@
+nav aria-label="breadcrumb"
+  ol.breadcrumb
+    li.breadcrumb-item
+      = link "Databases", to: Routes.database_path(@conn, :index)
+    li.breadcrumb-item.active aria-current="page"
+      | New Database
+
+.row
+  .col-md-12
+    = render Web.DatabaseView, "_form.html",
+      path: Routes.database_path(@conn, :create),
+      changeset: @changeset

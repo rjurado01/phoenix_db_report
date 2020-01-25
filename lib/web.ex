@@ -23,7 +23,10 @@ defmodule Web do
 
       import Plug.Conn
       import Web.Gettext
+
       alias Web.Router.Helpers, as: Routes
+
+      action_fallback Web.FallbackController
     end
   end
 

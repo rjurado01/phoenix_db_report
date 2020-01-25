@@ -1,0 +1,58 @@
+= form_for @changeset, @path, [class: 'card'], fn f ->
+  .card-body
+    .row
+      .form-group.col-md-4
+        label.form-label Title
+
+        = text_input f, :title,
+          placeholder: "Title",
+          class: "form-control #{error_class(f, :title)}"
+
+      .form-group.col-md-4
+        label.form-label Type
+
+        = select f, :type,
+          ["Postgres": "postgres"],
+          class: "form-control #{error_class(f, :type)}"
+
+      .form-group.col-md-4
+        label.form-label Name
+
+        = text_input f, :name,
+          placeholder: "Name",
+          class: "form-control #{error_class(f, :name)}"
+
+      .form-group.col-md-2
+        label.form-label Host
+
+        = text_input f, :host,
+          placeholder: "Host",
+          class: "form-control #{error_class(f, :host)}"
+
+      .form-group.col-md-2
+        label.form-label Port
+
+        = number_input f, :port,
+          placeholder: "Port",
+          class: "form-control #{error_class(f, :port)}"
+
+      .form-group.col-md-4
+        label.form-label User
+
+        = text_input f, :user,
+          placeholder: "User",
+          class: "form-control #{error_class(f, :user)}",
+          autocomplete: "none"
+
+      .form-group.col-md-4
+        label.form-label Password
+
+        = text_input f, :password,
+          placeholder: "Password",
+          type: "password",
+          class: "form-control #{error_class(f, :password)}",
+          autocomplete: "none"
+
+
+  .card-footer.text-right
+    = submit "Save", class: "btn btn-primary"

@@ -13,4 +13,11 @@ defmodule Web.ErrorView do
   def template_not_found(template, _assigns) do
     Phoenix.Controller.status_message_from_template(template)
   end
+
+  def render("404.html", assigns) do
+    render(Web.ErrorView, "404_page.html",
+      layout: {Web.LayoutView, "empty.html"},
+      conn: assigns.conn
+    )
+  end
 end

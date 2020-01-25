@@ -1,0 +1,8 @@
+<%= if get_flash(@conn, :info) do %>
+  <div id="info-notification" class="alert alert-success alert-dismissible" style="position: absolute; top: 5rem; right: 2rem; z-index:99;">
+    <button type="button" class="close" data-dismiss="alert">
+      <i data-feather="x"></i>
+    </button>
+    <%= get_flash(@conn, :info) %>
+  </div>
+<% end %>
