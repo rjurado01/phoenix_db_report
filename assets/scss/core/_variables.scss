@@ -1,0 +1,124 @@
+// COLORS
+
+$blue: #467fcf;
+$azure: #45aaf2;
+$indigo: #6574cd;
+$purple: #a55eea;
+$pink: #f66d9b;
+$red: #cd201f;
+$soft-red: #F56C6C;
+$orange: #fd9644;
+$yellow: #f1c40f;
+$lime: #7bd235;
+$green: #5eba00;
+$teal: #2bcbba;
+$cyan: #17a2b8;
+$white: #ffffff;
+
+$base-colors: (
+	"blue": $blue,
+	"red": $red,
+	"orange": $orange,
+	"yellow": $yellow,
+	"green": $green
+);
+
+@each $color, $value in $base-colors {
+  .bg-#{$color}-lightest { background: mix($value, #fff, 20%) !important; }
+  .bg-#{$color}-lighter { background: mix($value, #fff, 35%) !important; }
+  .bg-#{$color}-light { background: mix($value, #fff, 70%) !important; }
+  .bg-#{$color} { background: $value !important; }
+  .bg-#{$color}-dark { background: mix($value, #000, 80%) !important; }
+  .bg-#{$color}-darker { background: mix($value, #000, 60%) !important; }
+  .bg-#{$color}-darkest { background: mix($value, #000, 40%) !important; }
+
+  .color-#{$color}-lightest { color: mix($value, #fff, 20%) !important; }
+  .color-#{$color}-lighter { color: mix($value, #fff, 35%) !important; }
+  .color-#{$color}-light { color: mix($value, #fff, 70%) !important; }
+  .color-#{$color} { color: $value !important; }
+  .color-#{$color}-dark { color: mix($value, #000, 80%) !important; }
+  .color-#{$color}-darker { color: mix($value, #000, 60%) !important; }
+  .color-#{$color}-darkest { color: mix($value, #000, 40%) !important; }
+}
+
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #868e96;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$primary: $blue;
+$secondary: $gray-500;
+$success: $green;
+$info: $azure;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$dark: $gray-800;
+
+$text-color: $gray-700;
+$text-color-dark: $gray-800;
+$text-color-light: $gray-600;
+
+
+// SIZES
+$sizes: 0 1 2 3 4 5 6 7 8 9 10 12 16 20;
+
+$size-1:  0.25rem;
+$size-2:  0.50rem;
+$size-3:  0.75rem;
+$size-4:  1.00rem;
+$size-5:  1.25rem;
+$size-6:  1.50rem;
+$size-7:  1.75rem;
+$size-8:  2.00rem;
+$size-10: 2.50rem;
+$size-12: 3.00rem;
+$size-14: 3.50rem;
+$size-16: 4.00rem;
+$size-20: 5.00rem;
+$size-24: 6.00rem;
+$size-28: 7.00rem;
+$size-32: 8.00rem;
+$size-36: 9.00rem;
+$size-40: 10.00rem;
+
+@each $i in $sizes {
+  $size: #{$i * 0.25}rem;
+
+  .h-#{$i} { height: $size; }
+  .w-#{$i} { width: $size; }
+
+  .m-#{$i} { margin: $size; }
+  .mb-#{$i} { margin-bottom: $size; }
+  .mt-#{$i} { margin-top: $size; }
+  .mr-#{$i} { margin-right: $size; }
+  .ml-#{$i} { margin-left: $size; }
+  .mx-#{$i} { margin-right: $size; margin-left: $size; }
+  .my-#{$i} { margin-top: $size; margin-bottom: $size; }
+
+  .p-#{$i}	{ padding: $size; }
+  .py-#{$i}	{ padding-top: $size; padding-bottom: $size; }
+  .px-#{$i}	{ padding-right: $size; padding-left: $size; }
+
+  .top-#{$i} { top: $size; }
+  .right-#{$i} { right: $size; }
+  .left-#{$i} { left: $size; }
+
+  .z-#{$i} { z-index: $i; }
+}
+
+// BREAKPOINTS
+$sm: 540px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// OTHER
+
+$radius: 3px;
+$border: 1px solid rgba(0, 40, 100, 0.12);

@@ -10,7 +10,7 @@ defmodule Web.ErrorHelpers do
   """
   def error_tag(form, field) do
     Enum.map(Keyword.get_values(form.errors, field), fn error ->
-      content_tag(:div, translate_error(error), class: "invalid-feedback")
+      content_tag(:div, translate_error(error), class: "input-error-text")
     end)
   end
 

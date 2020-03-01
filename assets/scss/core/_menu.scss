@@ -1,0 +1,31 @@
+.menu {
+  position: absolute;
+  min-width: $size-40;
+  right: 0;
+  z-index: 3;
+  background: white;
+  border: $border;
+  padding-top: $size-2;
+  padding-bottom: $size-2;
+
+  a {
+    display: block;
+    padding: $size-1 $size-4;
+    color: $text-color-light;
+
+    svg {
+      height: $size-4;
+      width: $size-4;
+      vertical-align: middle;
+      margin-right: $size-2;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: $light;
+    }
+  }
+}

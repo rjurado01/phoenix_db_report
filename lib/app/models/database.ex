@@ -23,5 +23,6 @@ defmodule App.Database do
     user
     |> cast(attrs, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
+    |> unsafe_validate_unique([:title], App.Repo)
   end
 end

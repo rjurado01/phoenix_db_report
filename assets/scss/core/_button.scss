@@ -1,0 +1,23 @@
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: $size-2 $size-3;
+  color: $gray-700;
+  background: $white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: $radius;
+  border: 1px solid;
+  border-color: $gray-300;
+  height: 100%;
+
+  &:hover { background: $gray-100; }
+
+  &.btn-primary {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+
+    &:hover { background: darken($primary, 2%); }
+  }
+}

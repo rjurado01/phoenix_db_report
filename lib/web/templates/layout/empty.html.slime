@@ -1,0 +1,7 @@
+doctype html
+html lang="en"
+  head
+    = render Web.LayoutView, "_head.html", conn: @conn
+
+  body
+    = render @view_module, @view_template, assigns

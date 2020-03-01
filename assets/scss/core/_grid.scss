@@ -1,0 +1,29 @@
+$col-sizes: 8.3333 16.6666 25 33.3333 41.3333 50 58.3333 66.6666 75 83.333 91.6666 100;
+
+.flex > .col {
+  box-sizing: border-box;
+  flex: 1;
+  padding: 0 $size-4;
+
+  @each $col-size in $col-sizes {
+    $i: index($col-sizes, $col-size);
+
+    &.col-#{$i}  { flex-basis: $col-size * 1%; max-width: $col-size * 1%; }
+
+    @media (min-width: $sm) {
+      &.col-sm-#{$i}  {
+        flex-basis: $col-size * 1% !important;
+        max-width: $col-size * 1% !important;
+      }
+    }
+  }
+}
+
+.cols-12 .col {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+.cols-mb-4 .col {
+  margin-bottom: $size-4;
+}

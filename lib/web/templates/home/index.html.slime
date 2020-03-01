@@ -1,9 +1,8 @@
-.page-header
-  h1.page-title Home
+.m-6
+  h1.mb-4 Home
 
-.card
-  .table-responsive
-    table.table.card-table.table-striped.table-vcenter
+  .panel
+    table.table-striped.table-hover
       thead
         tr
           th colspan="2"  User

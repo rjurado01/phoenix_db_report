@@ -8,7 +8,7 @@ html lang="en"
 
     header.flex.justify-between.py-3.px-6
       div
-        =link to: Routes.home_path(@conn, :index) do
+        a
           img.h-10 alt=("tabler logo") src="/images/phoenix.png"
 
       .relative.cursor-pointer
@@ -25,9 +25,12 @@ html lang="en"
             i data-feather="user"
             span Profile
 
+          = link to: Routes.database_path(@conn, :index), method: :get do
+            i data-feather="lock"
+            span Admin
+
           = link to: Routes.session_path(@conn, :delete), method: :delete do
             i data-feather="log-out"
             span Sign Out
 
-    .m-4
-      = render @view_module, @view_template, assigns
+    = render @view_module, @view_template, assigns

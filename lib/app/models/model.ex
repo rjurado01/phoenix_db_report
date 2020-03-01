@@ -10,7 +10,13 @@ defmodule App.Model do
       alias App.Repo
       alias Ecto.Changeset
 
-      def changeset(attrs) do
+      # TODO replace by is_struct when elixir v1.11.0 is published
+      # https://hexdocs.pm/elixir/master/Kernel.html#is_struct/1
+      def changeset(record) when is_map(record) and :erlang.is_map_key(:__struct__, record) do
+        changeset(record, %{})
+      end
+
+      def changeset(attrs) when is_map(attrs) do
         changeset(struct(__MODULE__), attrs)
       end
 

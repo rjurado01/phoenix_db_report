@@ -1,29 +1,27 @@
-.row
-  .col.col-login.mx-auto
+#login.flex.flex-col.justify-center.h-100.text-center.m-auto
     .text-center.mb-6
-      img.h-6 alt="" src="./images/phoenix.png" /
+      img.h-10 alt="" src="./images/phoenix.png" /
 
-    = form_for @changeset, Routes.session_path(@conn, :create), [class: :card], fn f ->
-      .card-body.p-6
-        .card-title Login to your account
+    = form_for @changeset, Routes.session_path(@conn, :create), [class: "panel py-4"], fn f ->
+      .panel-section.px-8.py-2
+        |Login to your account
 
+      .panel-section.px-8.py-2
         = if f.errors != [] do
-          .alert.alert-danger role="alert"
+          .bg-red-lightest.color-red-dark.p-2.mb-4
             = cond do
               - f.errors[:email] ->
               | Invalid email
               - f.errors[:password] ->
               | Invalid password
 
-        .form-group
-          = text_input f, :email,
-            placeholder: "Username",
-            class: "form-control #{email_error_class(f)}"
+        = text_input f, :email,
+          placeholder: "Username",
+          class: "w-100 mb-2 #{email_error_class(f)}"
 
-        .form-group
-          = password_input f, :password,
-            placeholder: "Password",
-            class: "form-control #{password_error_class(f)}"
+        = password_input f, :password,
+          placeholder: "Password",
+          class: "w-100 #{password_error_class(f)}"
 
-        .form-footer
-          = submit "Sign in", class: "btn btn-primary btn-block"
+      .panel-section.px-8.py-2
+        = submit "Sign in", class: "btn btn-primary block w-100"

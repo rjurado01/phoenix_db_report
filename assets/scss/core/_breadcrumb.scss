@@ -1,0 +1,16 @@
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 0;
+
+    &:not(:first-child) {
+      &::before {
+        content: "/";
+        margin: 0 $size-2;
+      }
+    }
+  }
+}

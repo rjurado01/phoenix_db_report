@@ -5,12 +5,12 @@ defmodule Web.SessionController do
 
   plug :put_layout, "empty.html"
 
-  def new(conn, _params) do
+  def new(conn, _params, _) do
     changeset = Session.changeset(%Session{}, %{})
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"session" => params}) do
+  def create(conn, %{"session" => params}, _) do
     changeset = Session.changeset(%Session{}, params)
 
     if changeset.valid? do
@@ -28,7 +28,7 @@ defmodule Web.SessionController do
     end
   end
 
-  def delete(conn, _params) do
+  def delete(conn, _params, _) do
     conn
     |> delete_session(:current_user_id)
     |> put_flash(:info, "Signed out succesfully.")

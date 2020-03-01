@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+
+  &.table-striped {
+    tbody {
+      tr:nth-of-type(odd) {
+        background: $gray-100;
+      }
+    }
+  }
+
+  &.table-hover {
+    tbody {
+      tr {
+        &:hover {
+          background: $gray-200;
+        }
+      }
+    }
+  }
+
+  // Scollable tables
+  &.table-scroll {
+    display: block;
+    overflow-x: auto;
+    padding-bottom: .75rem;
+    white-space: nowrap;
+  }
+
+  td, th {
+    border-bottom: $border;
+    padding: $size-3 $size-2;
+  }
+
+  th {
+    border-bottom-width: 1px;
+  }
+}

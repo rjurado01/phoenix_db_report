@@ -23,10 +23,16 @@ defmodule Web do
 
       import Plug.Conn
       import Web.Gettext
+      import Web.Controller.BaseHelper
 
       alias Web.Router.Helpers, as: Routes
 
       action_fallback Web.FallbackController
+
+      def action(conn, _) do
+        args = [conn, conn.params, conn.assigns]
+        apply(__MODULE__, action_name(conn), args)
+      end
     end
   end
 
