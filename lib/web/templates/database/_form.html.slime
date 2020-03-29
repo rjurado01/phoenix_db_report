@@ -1,4 +1,4 @@
-= form_for @changeset, @path, [class: 'panel wmax-60'], fn f ->
+= form_for @changeset, @path, [class: "panel wmax-60"], fn f ->
   .flex.py-4.cols-mb-4.cols-12.inputs-top-label
     .col.col-sm-4
       label Title
@@ -67,7 +67,7 @@
       = link "Delete",
         to: @delete_path,
         method: "delete",
-        class: 'btn color-red-light',
-        data-confirmation: 'Are your sure?'
+        class: "btn color-red-light",
+        data: [confirm: "Are your sure?"]
 
     = submit "Save", class: "btn btn-primary ml-auto"
